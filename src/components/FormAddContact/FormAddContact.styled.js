@@ -13,7 +13,7 @@ export const Form = styled.form`
 `;
 
 export const AddContactBtn = styled.button`
-  margin: 30px auto 0;
+  margin: 0 auto;
   display: block;
   border: 1px solid lightgray;
   border-radius: 2px;

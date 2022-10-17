@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const Input = styled.input`
   border: 1px solid lightgray;
-  margin-left: 15px;
+  margin: 20px;
+  margin-top: 5px;
   font-size: 16px;
-  width: 100%;
+  width: 360px;
   outline: none;
   border-radius: 2px;
   &:hover,
@@ -17,6 +18,8 @@ export const Input = styled.input`
 
 export const FormLabel = styled.label`
   font-size: 16px;
+  margin-left: 25px;
+  margin-top: 20px;
   text-transform: capitalize;
-  display: flex;
+  /* display: flex; */
 `;

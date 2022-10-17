@@ -1,5 +1,5 @@
 import { React, Component } from 'react';
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 import FormAddContact from './FormAddContact';
 
 class App extends Component {
@@ -7,8 +7,20 @@ class App extends Component {
     contacts: [],
   };
 
+  addContact = ({ name, number }) => {
+    const contact = {
+      id: nanoid(),
+      name,
+      number,
+    };
+
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
+  };
+
   render() {
-    return <FormAddContact />;
+    return <FormAddContact onAddFormSubmit={this.addContact} />;
   }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormLabel, Input } from './FormInput.styled';
 
-const FormInput = ({ type, name, label, value, onChange }) => {
+const FormInput = ({ type, name, label, value, onChange, pattern, title }) => {
   return (
     <FormLabel>
       {label}
@@ -11,8 +11,8 @@ const FormInput = ({ type, name, label, value, onChange }) => {
         name={name}
         value={value}
         onChange={onChange}
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+        pattern={pattern}
+        title={title}
         required
       />
     </FormLabel>
@@ -25,6 +25,8 @@ FormInput.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  pattern: PropTypes.string.isRequired,
 };
 
 export default FormInput;
