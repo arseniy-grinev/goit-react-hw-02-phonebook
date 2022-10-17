@@ -39,7 +39,7 @@ class FormAddContact extends Component {
   };
 
   render() {
-    const { name, number, onAddFormSubmit } = this.state;
+    const { name, number } = this.state;
     return (
       <Form onSubmit={this.onSubmit}>
         <FormInput
