@@ -13,7 +13,7 @@ const options = {
   number: {
     type: 'tel',
     name: 'number',
-    pattern: '+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}',
+    pattern: ' +?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}',
     title:
       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +',
   },
@@ -44,20 +44,22 @@ class FormAddContact extends Component {
       <Form onSubmit={this.onSubmit}>
         <FormInput
           value={name}
-          type={'text'}
-          name={'name'}
-          label={'name: '}
+          type={options.name.type}
+          name={options.name.name}
+          label={`${options.name.name}:`}
           onChange={this.onImputChange}
           pattern={options.name.pattern}
           title={options.name.title}
         />
         <FormInput
           value={number}
-          type={'tel'}
-          name={'number'}
-          label={'number: '}
+          type={options.number.type}
+          name={options.number.name}
+          label={`${options.number.name}:`}
           onChange={this.onImputChange}
-          pattern={options.number.pattern}
+          pattern={
+            '+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}'
+          }
           title={options.number.title}
         />
         <AddContactBtn type="submit">Add contanct</AddContactBtn>
