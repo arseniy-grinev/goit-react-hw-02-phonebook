@@ -33,7 +33,7 @@ class FormAddContact extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    this.props.AddContactBtn(this.state);
+    this.props.onAddFormSubmit(this.state);
 
     this.setState({ name: '', number: '' });
   };
