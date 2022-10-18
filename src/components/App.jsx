@@ -51,9 +51,14 @@ class App extends Component {
     );
   };
 
+  getSortedContacts = contacts => {
+    return contacts.sort((x, y) => x.name.localeCompare(y.name));
+  };
+
   render() {
     const { filter, contacts } = this.state;
     const filteredContacts = this.getFilteredContacts(contacts);
+    const sortedContacts = this.getSortedContacts(filteredContacts);
     return (
       <>
         <SectionWrap title="Phonebook">
@@ -62,7 +67,7 @@ class App extends Component {
         <SectionWrap title="Contacts">
           <FilterByName value={filter} onChange={this.changeFilter} />
           <ContactsList
-            contacts={filteredContacts}
+            contacts={sortedContacts}
             deleteContact={this.deleteContact}
           />
         </SectionWrap>
