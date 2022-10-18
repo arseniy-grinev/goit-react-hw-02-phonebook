@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Input = styled.input`
   border: 1px solid lightgray;
-  margin: 20px;
+  /* margin: 20px; */
   margin-top: 5px;
+  margin-left: 50px;
   font-size: 16px;
   width: 360px;
   outline: none;
@@ -18,7 +19,7 @@ export const Input = styled.input`
 
 export const FormLabel = styled.label`
   font-size: 16px;
-  margin-left: 25px;
+  margin-left: 50px;
   margin-top: 20px;
   text-transform: capitalize;
   /* display: block; */
