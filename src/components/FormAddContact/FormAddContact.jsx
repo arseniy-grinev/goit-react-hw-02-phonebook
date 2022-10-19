@@ -1,4 +1,5 @@
 import { React, Component } from 'react';
+import PropTypes from 'prop-types';
 import FormInput from 'components/FormInput';
 import { Form, AddContactBtn } from './FormAddContact.styled';
 
@@ -57,9 +58,7 @@ class FormAddContact extends Component {
           name={options.number.name}
           label={`${options.number.name}:`}
           onChange={this.onImputChange}
-          pattern={
-            '+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}'
-          }
+          pattern={options.number.pattern}
           title={options.number.title}
         />
         <AddContactBtn type="submit">Add contanct</AddContactBtn>
@@ -69,3 +68,7 @@ class FormAddContact extends Component {
 }
 
 export default FormAddContact;
+
+FormAddContact.propTypes = {
+  onAddFormSubmit: PropTypes.func,
+};

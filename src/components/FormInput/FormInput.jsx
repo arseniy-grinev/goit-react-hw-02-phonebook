@@ -22,8 +22,8 @@ const FormInput = ({ type, name, label, value, onChange, pattern, title }) => {
 FormInput.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  value: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
